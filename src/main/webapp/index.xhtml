@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Avaliação</title>
+</h:head>
+<h:body>
+	<p:growl id="msgs" showDetail="false" life="7000" sticky="false" autoUpdate="true"/>
+	
+	
+<h:form var="it" id="tblRegistros" value="cadastroMB.registros">
+	<p:outputLabel value="CADASTRO DE SERVIÇOS: "/>
+	<p:inputText/>
+	
+	
+	<h:panelGrid columns="2">	
+	<p:outputLabel value="DESCRIÇÃO: "/>
+	<p:inputText value="#{cadastroMB.edit.descricao}"/>
+	
+	
+	<p:outputLabel value="TIPO: "/>
+	<p:selectOneMenu value="#{cadastroMB.edit.tipo}">
+				<f:selectItem itemLabel="Selecione" />
+				<f:selectItem itemValue="UM" itemLabel="Estagiario" />
+				<f:selectItem itemValue="DOIS" itemLabel="Jovem Aprendiz" />		
+	</p:selectOneMenu>
+
+
+	<p:outputLabel value="UNIDADE: "/>
+	<p:inputText value="#{cadastroMB.edit.unidade}"/>
+
+	
+	<p:outputLabel value="PREÇO: "/>
+	<p:inputText value="#{cadastroMB.edit.preco}"/>
+
+	
+	<p:commandButton value="NOVO" title="NOVO" icon="ui-icon-check" />
+	<p:commandButton value="CADASTRAR" title="CADASTRAR" icon=""  actionListener="#{cadastroMB.onSave()}"/>
+	<p:commandButton value="ATUALIZAR" title="ATUALIZAR" icon="ui-icon-pencil"/>
+	<p:commandButton value="EXCLUIR" title="EXCLUIR" icon="ui-icon-trash"/>
+	</h:panelGrid>
+</h:form>
+
+</h:body>
+</html>
